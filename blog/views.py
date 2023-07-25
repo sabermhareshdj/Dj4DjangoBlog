@@ -25,6 +25,10 @@ class PostList(ListView):
 class PostDetail(DetailView):
     model = Post
 
+def post_detail(request,pk):
+     data = Post.objects.get(id=pk)
+     return render(request,'blog/post_detail.html',{'post':data})
+
 
 # def post_new(request):
 #     if request.method == 'POST':
