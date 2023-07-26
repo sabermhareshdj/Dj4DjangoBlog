@@ -19,7 +19,7 @@ class Post(models.Model):
         return self.title
 
 
-class Commment(models.Model):
+class Comment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='comment_author')
     post = models.ForeignKey(Post,related_name='comment_post',on_delete=models.CASCADE)
     comment = models.TextField(max_length=200)
