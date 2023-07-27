@@ -8,6 +8,13 @@ class PostAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     list_display = ['title','draft','author']
     list_filter = ['title','draft']
     search_fields = ['title','draft']
+
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['user','post','created_dt'] 
+    list_filter =['user']
+
 admin.site.register(Post,PostAdmin)
-admin.site.register(Comment)
+admin.site.register(Comment,CommentAdmin)
 
